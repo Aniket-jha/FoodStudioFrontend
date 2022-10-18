@@ -1,0 +1,52 @@
+.contactTitle{
+    margin:15px 0px;
+    text-align: center;
+}
+
+.contactContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+}
+
+.addressArea{
+    font-size: 10px;
+    font-family: Montserrat;
+    width: 350px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contactFormTitle{
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.contactForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.formPart{
+    margin:  15px  0px;
+}
+
+.formPart input{
+    padding: 10px;
+    outline: none;
+    border: #cbcbcb 1px solid;
+    border-radius: 5px;
+    margin: 0px 10px;
+    width: 300px;
+}
+
+.formPart textarea{
+    padding: 10px;
+        outline: none;
+        border: #cbcbcb 1px solid;
+        border-radius: 5px;
+        margin: 0px 10px;
+        width: 630px;
+}

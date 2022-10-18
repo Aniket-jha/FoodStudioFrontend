@@ -1,0 +1,58 @@
+.newProductContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+       
+}
+.newProductContainer h1{
+    font-family:Roboto;
+    font-weight: 500;
+
+}
+
+.createProductForm div{
+    margin:10px
+}
+
+.createProductForm input  {
+    margin-left: 10px;
+    padding: 8px;
+    border: #b0b0b0 1px solid;
+    border-radius: 5px;
+    width: 280px;
+}
+
+
+.createProductForm textarea {
+    margin-left: 10px;
+    padding: 8px;
+    border: #b0b0b0 1px solid;
+    border-radius: 5px;
+    width: 280px;
+}
+
+.createProductForm select {
+    margin-left: 10px;
+    padding: 8px;
+    border: #b0b0b0 1px solid;
+    border-radius: 5px;
+    width: 280px;
+}
+
+.nameBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upadateButtonBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameBox2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

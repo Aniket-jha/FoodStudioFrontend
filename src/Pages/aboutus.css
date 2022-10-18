@@ -1,0 +1,23 @@
+.aboutUsBox{
+    margin:16px 25px;
+}
+.aboutUsBox h1{
+    text-align: center;
+    margin: 16px 0px;
+}
+.aboutUsContentBox{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 45px;
+}
+.aboutUsContent{
+    width: 800px;
+    margin: 16px;
+}
+.aboutUsContent img{
+    width: 500px;
+}
+.aboutUsContent p{
+    text-align: justify;
+}

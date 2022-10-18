@@ -1,0 +1,103 @@
+.tip{
+    background-color: #EB4747;
+
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tip h6{
+    font-family: Open Sans;
+}
+.tipCol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tipCol div{
+    margin-right: 30px;
+    font-family: Yanone Kaffeesatz;
+}
+.tipCol h6{
+    font-family: Open Sans;
+}
+.logoDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.navLink{
+    font-weight: bold;
+    font-family: Open Sans;
+    font-size: 1.2rem;
+    color:"#000";
+    margin:13px;
+
+}
+.navLink:hover{
+    color: #EB4747;
+}
+
+.background {
+    background-image: url("../assets/titleBorder.png");
+    background-repeat: repeat-x;
+    height: 20px;
+    margin: 60px 0;
+    text-align: center
+}
+.background h2{
+    background: #fff;
+        display: inline-block;
+        color: rgb(16, 16, 16);
+        margin-top: -28px;
+        padding: 5px 30px 10px 30px;
+        border: 1px solid #dedede;
+        font-family: Open Sans;
+       
+}
+
+.dropdown{
+    position: relative;
+        display: inline-block;
+        cursor: pointer;
+}
+
+.dropdownContent{
+    display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+}
+.dropdown p {
+    color: black;
+    font-family: Open Sans;
+    padding: 15px;
+}
+
+.dropdown p:hover{
+    background-color: #e7e7e7;
+    padding: 15px;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.loginButton{
+    
+    color: white;
+    text-decoration:none ;
+}
+
+.loginButton:hover{
+    color: #ccc0c0;
+}
+
+.loginButton h6{
+margin-top: 10px;
+}

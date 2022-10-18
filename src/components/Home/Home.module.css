@@ -1,0 +1,181 @@
+.banner{
+    margin: 40px 130px;
+    background-color: white;
+    box-shadow: 3px 4px 3px 4px  rgb(231, 231, 231);
+    border: white 15px solid;
+  
+}
+
+.dividerDiv{
+    margin: 60px 120px;
+}
+
+.mainDiv{
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    gap: 20px;
+    max-height: 500px;
+}
+
+.boxDiv{
+    background-color: #EB4747;
+    padding: 15px;
+    width: 380px;
+}
+
+.inner{
+    padding: 5px;
+    border: 1px white solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+.inner div{
+    margin: 10px;
+}
+.inner h5{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: Open Sans;
+}
+.inner p{
+    color: white;
+    font-size: 0.9rem;
+    font-family: Open Sans;
+}
+
+.multiDiv{
+    margin: 40px 40px;
+}
+.productDiv{
+    margin: 40px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.multicarousel{
+    padding: 30px;
+}
+
+.multicarouselCompanies div{
+    padding: 30px 30px 80px 30px;
+}
+.cartButton{
+    background-color: white;
+    padding: 6px;
+    margin: 10px 0px;
+    outline: none;
+}
+.cartButton:hover{
+    background-color: #EB4747;
+    border: 2px solid #EB4747;
+    color: white;
+}
+.cardBox h4{
+    font-size: 2rem;
+    color: rgb(31, 114, 159);
+    font-family: Open Sans;
+}
+.cardBox h6 {
+    font-size: 1.2rem;
+    margin: 10px 0px;
+    color: #EB4747;
+}
+.card{
+    width: 16rem;
+    margin: 10px;
+}
+
+.upDiv{
+    margin: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.cardDiv{
+    padding: 30px 50px;
+    width: 400px;
+    border-radius: 15px;
+    border: rgb(31, 114, 159) 1px solid;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cardDiv h4{
+    font-size: 1.3rem;
+    font-family: Open Sans;
+}
+.cardDiv h3{
+    font-size: 2rem;
+}
+
+.productBox{
+    text-decoration: none;
+    color: black;
+}
+
+.ProductsBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+@media screen and (max-width:450px) {
+    .banner {
+        margin: 15px 15px;
+
+
+    }
+
+    .productDiv {
+        margin: 40px 0px;
+
+    }
+
+    .dividerDiv {
+        margin: 10px;
+    }
+
+    .multicarouselCompanies {
+        padding: 0px;
+    }
+
+    .card {
+        width: 16em !important;
+        margin: 10px;
+    }
+
+    .upDiv {
+        margin: 40px 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+       
+}
+
+@media screen and (max-width:768px) {
+    .banner {
+        margin: 15px 15px;
+
+
+    }
+
+    .dividerDiv {
+        margin: 30px;
+    }
+}
