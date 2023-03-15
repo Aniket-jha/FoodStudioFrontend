@@ -72,7 +72,8 @@ const { banners } = useSelector((state) => state.banners);
   return (
     <div className="dashboard">
       <MetaData title="Dashboard - Admin Panel" />
-   { user.role==="admin" ? ( <><Sidebar/>
+    
+   { user?.role==="admin" ? ( <><Sidebar/>
 
       <div className="dashboardContainer">
        

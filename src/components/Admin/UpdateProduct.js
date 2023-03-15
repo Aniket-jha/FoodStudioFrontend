@@ -236,6 +236,7 @@ const UpdateProduct = () => {
                 <img key={index} src={image} alt="Product Preview" />
               ))}
             </div>
+            
 </div>
           <div className="upadateButtonBox">
             <Button

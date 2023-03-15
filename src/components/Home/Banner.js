@@ -31,22 +31,7 @@ const Banner = () => {
     
         
     
-      <Carousel.Item className={classes.bannerImg}  interval={500}>
-        <img
-          className="d-block w-100"
-          src={Banner2}
-          alt="Second slide"
-        />
-      
-      </Carousel.Item>
-      <Carousel.Item className={classes.bannerImg} > 
-        <img
-          className="d-block w-100"
-          src={Banner3}
-          alt="Third slide"
-        />
-        
-      </Carousel.Item>
+    
     </Carousel>
     </div>
   )

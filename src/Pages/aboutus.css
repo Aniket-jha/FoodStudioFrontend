@@ -21,3 +21,27 @@
 .aboutUsContent p{
     text-align: justify;
 }
+
+@media screen and (max-width: 600px) {
+    .aboutUsContentBox {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px;
+        }
+                .aboutUsContent p {
+                    text-align: justify;
+                    font-size: 12px;
+                }
+                .aboutUsContent {
+                    width: 100%;
+                    margin: 0px;
+                }
+                                .aboutUsContent img {
+                                    width: 100%;
+                                }
+                                                                .aboutUsBox {
+                                                                    margin: 16px 05px;
+                                                                }
+}

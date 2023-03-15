@@ -29,7 +29,7 @@
     "react-alert-template-basic": "^1.0.2",
     "react-bootstrap": "^2.4.0",
     "react-bootstrap-range-slider": "^3.0.8",
-     "react-chartjs-2": "^3.0.4",
+    "react-chartjs-2": "^3.0.4",
     "react-charts": "^2.0.0-beta.7",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -41,7 +41,9 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
+    "swiper": "^9.0.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

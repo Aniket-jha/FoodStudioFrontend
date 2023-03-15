@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import classes from "./Header.module.css"
 const HeaderNavbar = () => {
   return (
@@ -11,12 +12,12 @@ const HeaderNavbar = () => {
         <Navbar.Toggle className="mx-right" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link className={classes.navLink} href="/">Home</Nav.Link>
+            <Link style={{textDecoration:"none",color:"#000"}} className={classes.navLink} to="/">Home</Link>
+             <Link style={{textDecoration:"none",color:"#000"}} className={classes.navLink } to="/products">Shop</Link>
            
-             <Nav.Link className={classes.navLink } href="/products">Shop</Nav.Link>
-             <Nav.Link className={classes.navLink } href="/Wholesale">Wholesale</Nav.Link>
-             <Nav.Link className={classes.navLink} href="/about">About Us </Nav.Link>
-             <Nav.Link className={classes.navLink} href="/contact">Contact</Nav.Link>
+             <Link style={{textDecoration:"none",color:"#000"}} className={classes.navLink} to="/about">About Us </Link>
+             <Link style={{textDecoration:"none",color:"#000"}} className={classes.navLink} to="/contact">Contact</Link>
+             
           </Nav>
         </Navbar.Collapse>
       </Container>

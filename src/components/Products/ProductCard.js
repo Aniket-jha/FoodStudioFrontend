@@ -16,7 +16,7 @@ const ProductCard = ({product}) => {
   return (
     <Link className={classes.productBox} to={`/product/${product._id}`}>
     <Card className={classes.card}>
-      <Card.Img style={{width:"14rem"}} variant="top" src={ product.images[0].url} />
+      <Card.Img style={{width:"14rem",height:"12rem"}} variant="top" src={ product.coverImages[0].url} />
       <Card.Body className={classes.cardBox}>
         <h4 style={{fontSize:"1.3rem",fontFamily:"Montserrat",fontWeight:"500"}}>{product.name}</h4>
        

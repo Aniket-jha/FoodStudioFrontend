@@ -26,8 +26,9 @@ const NewProduct = () => {
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
+  const [coverImages, setCoverImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
-
+const [coverImagePreview, setCoverImagePreview] = useState([]);
   const categories = [
     
  "Californian Almonds",
@@ -60,7 +61,9 @@ const NewProduct = () => {
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
-   
+    coverImages.forEach((image) => {
+      myForm.append("coverImages", image);
+    });
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -88,6 +91,26 @@ const NewProduct = () => {
       reader.readAsDataURL(file);
     });
   };
+
+  const createCoverImageChange = (e) =>{
+ const files = Array.from(e.target.files);
+
+    setCoverImages([]);
+    setCoverImagePreview([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setCoverImagePreview((old) => [...old, reader.result]);
+          setCoverImages((old) => [...old, reader.result]);
+        }
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
 
   return (
     <Fragment>
@@ -155,6 +178,25 @@ const NewProduct = () => {
                 onChange={(e) => setStock(e.target.value)}
               />
             </div>
+              <div id="createProductFormImage">
+              {coverImagePreview.map((image, index) => (
+                <img key={index} src={image} alt="Product Preview" />
+              ))}
+            </div>
+             <div id="createProductFormFile">
+              <input
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={createCoverImageChange}
+                multiple
+              />
+            </div>
+             <div id="createProductFormImage">
+              {imagesPreview.map((image, index) => (
+                <img key={index} src={image} alt="Product Preview" />
+              ))}
+            </div>
 
             <div id="createProductFormFile">
               <input
@@ -166,11 +208,10 @@ const NewProduct = () => {
               />
             </div>
 
-            <div id="createProductFormImage">
-              {imagesPreview.map((image, index) => (
-                <img key={index} src={image} alt="Product Preview" />
-              ))}
-            </div>
+          
+             
+
+           
 
             <Button
               id="createProductBtn"

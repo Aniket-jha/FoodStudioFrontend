@@ -103,10 +103,19 @@
 
 @media screen and (max-width: 600px) {
     .filterBox {
-        width: 20vmax;
+        width: 100%;
         position: static;
         margin: auto;
     }
+        .productArea {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+           
+            padding-left: 25px;
+        }
+        
 
     .page-link {
         font: 300 1.7vmax "Roboto";

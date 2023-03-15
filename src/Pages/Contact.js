@@ -50,6 +50,9 @@ const Contact = () => {
                         <div className={classes.formPart}>
                             <textarea placeholder='Enter your Message'  cols="30" rows="10"></textarea>
                         </div>
+                        <div className={classes.formButton} >
+                          <button>Submit</button>
+                        </div>
                     </form>
             
         <Footer/>

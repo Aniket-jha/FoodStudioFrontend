@@ -7,6 +7,8 @@ import "./Profile.css";
 
 const Profile = () => {
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
+  const reducerData = useSelector(state => state);
+  console.log(reducerData, 'reducer data here ')
   const navigate = useNavigate();
   useEffect(() => {
     if (!isAuthenticated) {

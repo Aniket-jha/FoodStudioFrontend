@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy  } from 'react';
 import Header from './components/Header';
 import './App.css';
 import {
@@ -44,8 +44,14 @@ import WholeSale from './components/Wholesale/WholeSale';
 import Payment from './components/cart/Payment';
 import PaymentSuccess from './components/cart/PaymentSuccess';
 import WholeSaleProductDetails from './components/Wholesale/WholeSaleProductDetails';
+import TermsofService from './Pages/TermsofService';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import ReturnPolicy from './Pages/ReturnPolicy';
+import CookiesPolicy from './Pages/CookiesPolicy';
+
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
+  console.log(user)
   useEffect(() => {
     
   
@@ -59,11 +65,16 @@ function App() {
     <div className="App">
     {isAuthenticated && <UserOptions user={user} />}
       <Routes>
+      
       <Route exact path="/" element={<Home/>}   />
       <Route exact path="/about" element={<About/>}   />
       <Route exact path="/contact" element={<Contact/>}   />
       <Route exact path="/products" element={<AllProducts/>}   />
        <Route exact path="/Wholesale" element={<WholeSale/>}   />
+        <Route exact path="/termsofservice" element={<TermsofService/>}   />
+        <Route exact path="/privacypolicy" element={<PrivacyPolicy/>}   />
+         <Route exact path="/returnpolicy" element={<ReturnPolicy/>}   />
+          <Route exact path="/cookiespolicy" element={<CookiesPolicy/>}   />
            <Route exact path="/products/:keyword" element={<AllProducts/>}   />
       <Route exact path="/product/:id" element={<ProductDetails/>}   />
       <Route exact path="/cart" element={<Cart/>}   />
@@ -80,17 +91,17 @@ function App() {
     {isAuthenticated && <Route exact path='/wholesale/:id' element={<WholeSaleProductDetails/>} />  }
    {isAuthenticated && <Route exact path='/password/update' element={<UpdatePassword/>} />  }
      {isAuthenticated && <Route exact path='/me/update' element={<UpdateProfile/>} />  }
-     {isAuthenticated && user.role==="admin" && <Route exact path='/admin/dashboard' element={<Dashboard/>} />   }
-        {isAuthenticated && user.role==="admin" && <Route exact path='/admin/banner' element={<NewBanner/>} />   }
-                {isAuthenticated && user.role==="admin" && <Route exact path='/admin/banners' element={<AllBanner/>} />   }
-      {isAuthenticated && user.role==="admin" && <Route exact path='/admin/products' element={<ProductList/>} />   }
-      {isAuthenticated && user.role==="admin" && <Route exact path='/admin/product/:id' element={<UpdateProduct/>} />   }
-       {isAuthenticated && user.role==="admin" && <Route exact path='/admin/user/:id' element={<UpdateUser/>} />   }
-       {isAuthenticated && user.role==="admin" && <Route exact path='/admin/users' element={<UsersList/>} />   }
-       {isAuthenticated && user.role==="admin" && <Route exact path='/admin/orders' element={<OrderList/>} />   }
-        {isAuthenticated && user.role==="admin" && <Route exact path='/admin/order/:id' element={<ProcessOrder/>} />   }
-         {isAuthenticated && user.role==="admin" && <Route exact path='/admin/product' element={<NewProduct/>} />   }
-         {isAuthenticated && user.role==="admin" && <Route exact path='/admin/reviews' element={<ProductReviews/>} />   }
+     {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/dashboard' element={<Dashboard/>} />   }
+        {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/banner' element={<NewBanner/>} />   }
+                {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/banners' element={<AllBanner/>} />   }
+      {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/products' element={<ProductList/>} />   }
+      {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/product/:id' element={<UpdateProduct/>} />   }
+       {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/user/:id' element={<UpdateUser/>} />   }
+       {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/users' element={<UsersList/>} />   }
+       {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/orders' element={<OrderList/>} />   }
+        {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/order/:id' element={<ProcessOrder/>} />   }
+         {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/product' element={<NewProduct/>} />   }
+         {isAuthenticated && user?.role==="admin" && <Route exact path='/admin/reviews' element={<ProductReviews/>} />   }
       <Route exact path='/password/forgot' element={<ForgotPassword/>} />  
       
      </Routes>

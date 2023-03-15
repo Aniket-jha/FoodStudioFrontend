@@ -36,7 +36,7 @@ const UserOptions = ({ user }) => {
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
-  if (user.role === "admin") {
+  if (user?.role === "admin") {
     options.unshift({
       icon: <DashboardIcon />,
       name: "Dashboard",
@@ -57,9 +57,7 @@ const UserOptions = ({ user }) => {
   function account() {
     navigate("/account");
   }
-  function cart() {
-    navigate("/cart");
-  }
+  
   function logoutUser() {
     dispatch(logout());
     navigate("/login")
@@ -77,13 +75,7 @@ const UserOptions = ({ user }) => {
         open={open}
         direction="down"
         className="speedDial"
-        icon={
-          <img
-            className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "/Profile.png"}
-            alt="Profile"
-          />
-        }
+       
       >
         {options.map((item) => (
           <SpeedDialAction

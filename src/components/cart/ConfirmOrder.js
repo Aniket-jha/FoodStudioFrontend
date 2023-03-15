@@ -29,10 +29,11 @@ const ConfirmOrder = () => {
 cartItems.map((item)=>{
   productContent =   products.find(product=>product._id===item.product)
    updatedStock = productContent.Stock - item.quantity
-   
+   console.log(productContent.Stock)
   return updatedStock
   
 })
+console.log(updatedStock)
 
  productContent.Stock = updatedStock
   console.log(productContent._id)
@@ -52,69 +53,69 @@ cartItems.map((item)=>{
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country},${shippingInfo.phoneNo}`;
 
   const proceedToPayment =  async () => {
-    const orderData = {
-      itemsPrice:subtotal,
-      shippingPrice:shippingCharges,
-      taxPrice:tax,
-      totalPrice:totalPrice,
-      shippingInfo:shippingInfo,
-      orderItems:cartItems,
-      user:user._id
-    };
+//     const orderData = {
+//       itemsPrice:subtotal,
+//       shippingPrice:shippingCharges,
+//       taxPrice:tax,
+//       totalPrice:totalPrice,
+//       shippingInfo:shippingInfo,
+//       orderItems:cartItems,
+//       user:user._id
+//     };
      
    
-   sessionStorage.setItem("orderInfo", JSON.stringify(orderData));
+//    sessionStorage.setItem("orderInfo", JSON.stringify(orderData));
 
      
-        const {data:{payment}}  = await axios.post("http://localhost:4000/api/v1/orders", {
-            amount:orderData.totalPrice,
-        })
-        const {data:{key}} = await axios.get("http://localhost:4000/api/v1/getKey")
-        console.log(payment);
-        var options = {
-    key: key, // Enter the Key ID generated from the Dashboard
-    amount: payment.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    currency: "INR",
-    name: "Food Studio",
-    description: "Test Transaction",
-    image: Logo,
-    order_id:payment.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url:"http://localhost:4000/api/v1/paymentverification",
-    "handler": function (response){
+//         const {data:{payment}}  = await axios.post("https://backend.foodstudio.co.in/api/v1/orders", {
+//             amount:orderData.totalPrice,
+//         })
+//         const {data:{key}} = await axios.get("https://backend.foodstudio.co.in/api/v1/getKey")
+//         console.log(payment);
+//         var options = {
+//     key: key, // Enter the Key ID generated from the Dashboard
+//     amount: payment.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//     currency: "INR",
+//     name: "Food Studio",
+//     description: "Test Transaction",
+//     image: Logo,
+//     order_id:payment.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//     callback_url:"https://backend.foodstudio.co.in/api/v1/paymentverification",
+//     "handler": function (response){
     
-      if(response.razorpay_payment_id){
-          orderData.paymentInfo = {
-            id: response.razorpay_payment_id,
-            status: "succeeded",
-          };
-         dispatch(createOrder(orderData))
-         dispatch(updateStock(productContent._id,productContent))
-         cartItems.map((item)=>(
-          dispatch(removeItemsFromCart(item.product))
-         ))
+//       if(response.razorpay_payment_id){
+//           orderData.paymentInfo = {
+//             id: response.razorpay_payment_id,
+//             status: "succeeded",
+//           };
+//          dispatch(createOrder(orderData))
+//          dispatch(updateStock(productContent._id,productContent))
+//          cartItems.map((item)=>(
+//           dispatch(removeItemsFromCart(item.product))
+//          ))
          
-         navigate("/paymentSuccess")
-        }
-         else{
-            console.log("There is an issue")
-          }
-   },
-    prefill: {
-        "name": user.name,
-        "email": user.email,
+//          navigate("/paymentSuccess")
+//         }
+//          else{
+//             console.log("There is an issue")
+//           }
+//    },
+//     prefill: {
+//         "name": user.name,
+//         "email": user.email,
         
-    },
-    notes: {
-        "address": "Razorpay Corporate Office"
-    },
-    theme: {
-        "color": "#000"
-    }
-};
-const razor = new window.Razorpay(options);
-  razor.open()
+//     },
+//     notes: {
+//         "address": "Razorpay Corporate Office"
+//     },
+//     theme: {
+//         "color": "#000"
+//     }
+// };
+// const razor = new window.Razorpay(options);
+//   razor.open()
 
-
+ navigate("/paymentSuccess")
      
   };
   

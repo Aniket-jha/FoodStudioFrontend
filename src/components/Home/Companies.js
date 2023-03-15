@@ -7,7 +7,18 @@ import jiomart from "../../assets/jiomart.png";
 import amazon from "../../assets/amazon.png";
 import naturebasket from "../../assets/naturebasket.png";
 import reliancesmart from "../../assets/reliancesmart.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
+// Import Swiper styles
+import "swiper/css";
 const Companies = () => {
+  const companiesData = [dmart,jiomart,amazon,naturebasket,reliancesmart]
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -29,37 +40,50 @@ const Companies = () => {
   return (
     <div className={classes.multiDiv}>
       {" "}
-      <Carousel
-        swipeable={false}
-        draggable={true}
-        showDots={true}
-        responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
-        infinite={true}
-        arrows={false}
-        keyBoardControl={true}
-        customTransition="transform 900ms ease-in"
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        className={classes.multicarouselCompanies}
-        centerMode={true}
+        <Swiper
+          spaceBetween={0}
+          className=""
+          draggable={true}
+          breakpoints={{
+        576: {
+          width: 576,
+          slidesPerView: 2,
+        },
+        780: {
+          width: 780,
+          slidesPerView: 3,
+        },
+       
+         1440:{
+          width:1440,
+          slidesPerView:4
+        }
+      }}
+          autoplay={{
+            delay: 500,
+            disableOnInteraction:false,
+          }}
+          loop={true}
+          modules={[Autoplay]}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+        {
+          companiesData.map(data=>(
+             <SwiperSlide>
+             <div className="swiperDiv" >
+          <img  src={data} alt="" />
+        </div >
+          </SwiperSlide>
+          ))
+        }
+          
          
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-60-px"
-      >
-        <div>
-          <img width="70px" src={jiomart} alt="" />
-        </div>
-        <div>
-          <img width="70px" src={reliancesmart} alt="" />
-        </div>
-        <div>
-          <img width="70px" src={amazon} alt="" />
-        </div>
-        <div>
-          <img width="70px" src={dmart} alt="" />
-        </div>
-      </Carousel>
+          
+        
+       
+        </Swiper>
+    
     </div>
   );
 };
